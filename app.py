@@ -22,8 +22,8 @@ if file:
 
     # prediction
     pred, pred_id, probs=model.predict(img)
-    st.success(f"Bashorat: {pred}")
-    st.info(f'Ehtimollik: {probs[pred_id]*100:.1f}%')
+    st.success(f"Prediction: {pred}")
+    st.info(f'Probability: {probs[pred_id]*100:.1f}%')
 
     # plotting
     fig=px.bar(x=probs*100, y=model.dls.vocab)
